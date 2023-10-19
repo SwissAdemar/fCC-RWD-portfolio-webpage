@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --bg-color: #031616;
+  --primary-color: #781111;
+  --text-color: #e4fbfb;
+  --secondary-color: #052424;
+  --ascent-color: #d61f1f;
+  --design-color: #500c0c;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  overflow: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 10px;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  width: 100%;
+}
+
+
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  max-height: 9vh;
+  background: var(--design-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  background: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 0 0 25rem 25rem;
+  
+}
+
+.nav-list {
+  display: flex;
+  gap: 5vw;
+  margin-right: 4vw;
+}
+
+.nav-link {
+  font-size: 2.4rem;
+  color: var(--text-color)
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 3px var(--text-color);
+}
+
+/* MAIN */
+
+main {
+  width: 100%;
+  background: var(--bg-color);
+}
+
+
+.center {
+  text-align: center;
+}
+/* SECTION 1 - WELCOME */
+
+section#welcome-section {
+  display: grid;
+  place-items: center;
+  border-bottom: 3px solid var(--design-color);
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-big {
+  font-size: 7rem;
+  color: var(--text-color);
+}
+
+.sub-text {
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--primary-color);
+}
+
+/* SECTION 2 - PROJECTS */
+
+section#projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid var(--design-color);
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero-medium {
+  font-size: 5rem;
+  color: var(--text-color);
+  margin-bottom: 5vh;
+}
+
+.tiles {
+  width: 70vw;
+  max-width: 100%;
+  min-height: 50vh;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+}
+
+.project-tile {
+  border-radius: 10px;
+  width: 100%;
+  min-height: 200px;
+  height: 50vh;
+  max-height: 100%;
+  display: grid;
+  grid-template-rows: 50vh 7vh;
+  box-shadow: 5px 5px 5px black;
+}
+
+.tile-img { 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: var(--primary-color);
+  border-radius: 0 0 10px 10px;
+}
+
+.tile-title {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  font-weight: normal;
+}
+
+.btn-container {
+  margin-top: 10vh;
+  display: flex;
+}
+
+.tiles-btn {
+  margin: 0 auto;
+  color: var(--text-color);
+  font-size: 2rem;
+  background: var(--ascent-color);
+  padding: 1rem 2rem;
+  transition: .3s background;
+}
+
+.tiles-btn:hover {
+  background: var(--primary-color);
+}
+
+/* SECTION 3 - CONTACT */
+
+section#contact {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 90vh;
+}
+
+.links {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+
+.link {
+  font-size: 3rem;
+  color: var(--text-color);
+  text-shadow: 3px 1px 0 black;
+}
+
+.link:hover {
+  text-shadow: 0 0 5px var(--text-color);
+}
+
+footer {
+  height: 10vh;
+  width: 100%;
+  border-top: 3px solid var(--ascent-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.footer-info{
+  flex: auto;
+}
+
+.author{
+  flex: auto;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 501px) and (max-width: 768px) {
+  /* NAVBAR */
+
+  .navbar {
+    justify-content: center;
+  }
+  .nav-list {
+    margin-right: 0;
+  }
+
+  /* MAIN */
+
+  .hero-big {
+    font-size: 4rem;
+  }
+  .sub-text {
+    font-size: 2rem;
+  }
+
+
+  /* SECTION 2 */
+
+  .hero-medium {
+    font-size: 2.5rem;
+    margin-top: 4rem;
+  }
+
+  .tiles {
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(3, min-content);
+    width: 100%;
+  }
+
+  .tiles-btn {
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+  }
+  
+  /* SECTION 3 */
+
+  section#contact .sub-text {
+    font-size: 2rem;
+  }
+
+  .link {
+    font-size: 1.4rem;
+  }
+
+  .project-tile {
+    grid-template-rows: 85% 15%;
+  }
+
+  .tile-title {
+    font-size: 1.7rem;
+  }
+
+  /* FOOTER */
+  
+  footer {
+    font-size: 1.1rem;
+  }
+  .footer-info{
+    flex: 1 1 50%;
+  }
+
+  .author{
+    flex: 1 1 30%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  /* NAVBAR */
+
+  .navbar {
+    justify-content: center;
+  }
+  .nav-list {
+    margin-right: 0;
+  }
+
+  /* MAIN */
+
+  .hero-big {
+    font-size: 5rem;
+  }
+  .sub-text {
+    font-size: 3rem;
+  }
+
+
+  /* SECTION 2 */
+
+  .hero-medium {
+    font-size: 3rem;
+
+  }
+
+  .tiles {
+    grid-template-columns: repeat(3, 230px);
+    width: 100%;
+    grid-gap: 2rem;
+  }
+
+  /* SECTION 3 */
+
+  section#contact .sub-text {
+    font-size: 2rem;
+  }
+
+  .link {
+    font-size: 2rem;
+  }
+
+  .project-tile {
+    grid-template-rows: 85% 15%;
+  }
+
+  .tile-title {
+    font-size: 1.7rem;
+  }
+
+  /* FOOTER */
+  
+  footer {
+    font-size: 1.3rem;
+  }
+  .footer-info{
+    flex: 1 1 50%;
+  }
+
+  .author{
+    flex: 1 1 30%;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  /* NAVBAR */
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin-right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+  }
+
+  /* MAIN */
+
+  .hero-big {
+    font-size: 4rem;
+  }
+
+  .sub-text {
+    font-size: 2rem;
+  }
+
+  .hero-medium {
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
+
+  /* SECTION 2 */
+
+  section#contact .hero-big {
+    font-size: 2.5rem;
+  }
+
+  section#contact .sub-text {
+    font-size: 1.5rem;
+  }
+
+  .project-tile {
+    grid-template-rows: 80% 20%;
+  }
+
+  .tile-title {
+    font-size: 1.3rem;
+  }
+
+  .tiles {
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(3, min-content);
+    width: 100%;
+  }
+
+  .tiles-btn {
+    font-size: 1rem;
+    padding: .5rem 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+
+  .link {
+    font-size: 1rem;
+  }
+  /* FOOTER */
+  
+  footer {
+    font-size: .7rem;
+  }
+  .footer-info{
+    flex: 1 1 50%;
+  }
+
+  .author{
+    flex: 1 1 50%;
+  }
+}
